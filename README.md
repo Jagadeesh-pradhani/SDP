@@ -1,2 +1,0 @@
-# SDP
-Senior Design Project
