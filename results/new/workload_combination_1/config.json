@@ -14472,7 +14472,7 @@
                         "name": "workload",
                         "path": "system.cpu13.workload",
                         "cmd": [
-                            "gem5/SPEC.Small/mcf/mcf"
+                            "gem5/SPEC.Small/heat/heat"
                         ],
                         "cwd": "/home/intel/Cache_simulation_gem5",
                         "drivers": [],
@@ -14481,7 +14481,7 @@
                         "errout": "cerr",
                         "euid": 100,
                         "eventq_index": 0,
-                        "executable": "gem5/SPEC.Small/mcf/mcf",
+                        "executable": "gem5/SPEC.Small/heat/heat",
                         "gid": 1000,
                         "input": "cin",
                         "kvmInSE": false,
@@ -16528,7 +16528,7 @@
                         "name": "workload",
                         "path": "system.cpu15.workload",
                         "cmd": [
-                            "gem5/SPEC.Small/heat/heat"
+                            "gem5/SPEC.Small/mcf/mcf"
                         ],
                         "cwd": "/home/intel/Cache_simulation_gem5",
                         "drivers": [],
@@ -16537,7 +16537,7 @@
                         "errout": "cerr",
                         "euid": 100,
                         "eventq_index": 0,
-                        "executable": "gem5/SPEC.Small/heat/heat",
+                        "executable": "gem5/SPEC.Small/mcf/mcf",
                         "gid": 1000,
                         "input": "cin",
                         "kvmInSE": false,

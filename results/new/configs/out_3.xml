@@ -41,9 +41,9 @@
     <param name="virtual_memory_page_size" value="4096" />
     <!-- address width determines the tag_width in Cache, LSQ and buffers in cache controller 
       default value is machine_bits, if not set -->
-    <stat name="total_cycles" value="9713302" />
-    <stat name="idle_cycles" value="2146538" />
-    <stat name="busy_cycles" value="7566764" />
+    <stat name="total_cycles" value="7698984" />
+    <stat name="idle_cycles" value="2134691" />
+    <stat name="busy_cycles" value="5564293" />
     <!--This page size(B) is complete different from the page size in Main memo section. this page size is the size of 
       virtual memory from OS/Archi perspective; the page size in Main memo section is the actual physical line in a DRAM bank  -->
     <!-- *********************** cores ******************* -->
@@ -138,57 +138,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the 'system.cpu0.instsIssued'instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="270335" />
-      <stat name="int_instructions" value="204625" />
-      <stat name="fp_instructions" value="758" />
-      <stat name="branch_instructions" value="30500" />
-      <stat name="branch_mispredictions" value="2682" />
-      <stat name="load_instructions" value="38044" />
-      <stat name="store_instructions" value="16321" />
+      <stat name="total_instructions" value="270301" />
+      <stat name="int_instructions" value="204699" />
+      <stat name="fp_instructions" value="760" />
+      <stat name="branch_instructions" value="30493" />
+      <stat name="branch_mispredictions" value="2692" />
+      <stat name="load_instructions" value="37929" />
+      <stat name="store_instructions" value="16373" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="303107" />
+      <stat name="committed_int_instructions" value="306258" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="439474" />
-      <stat name="idle_cycles" value="121637" />
-      <stat name="busy_cycles" value="317837" />
+      <stat name="total_cycles" value="441600" />
+      <stat name="idle_cycles" value="120573" />
+      <stat name="busy_cycles" value="321027" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="592826" />
-      <stat name="ROB_writes" value="622271" />
+      <stat name="ROB_reads" value="596078" />
+      <stat name="ROB_writes" value="622646" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="417861" />
+      <stat name="rename_reads" value="418069" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218452" />
+      <stat name="rename_writes" value="218464" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26033" />
-      <stat name="fp_rename_writes" value="13609" />
+      <stat name="fp_rename_reads" value="25795" />
+      <stat name="fp_rename_writes" value="13479" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="839904" />
-      <stat name="inst_window_writes" value="386967" />
-      <stat name="inst_window_wakeup_accesses" value="250703" />
-      <stat name="fp_inst_window_reads" value="23699" />
-      <stat name="fp_inst_window_writes" value="22937" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10845" />
+      <stat name="inst_window_reads" value="843119" />
+      <stat name="inst_window_writes" value="387020" />
+      <stat name="inst_window_wakeup_accesses" value="250887" />
+      <stat name="fp_inst_window_reads" value="23593" />
+      <stat name="fp_inst_window_writes" value="22801" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10799" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="327023" />
-      <stat name="float_regfile_reads" value="16293" />
-      <stat name="int_regfile_writes" value="194390" />
-      <stat name="float_regfile_writes" value="8928" />
+      <stat name="int_regfile_reads" value="327237" />
+      <stat name="float_regfile_reads" value="16183" />
+      <stat name="int_regfile_writes" value="194471" />
+      <stat name="float_regfile_writes" value="8898" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="260227" />
-      <stat name="fpu_accesses" value="11907" />
+      <stat name="ialu_accesses" value="260299" />
+      <stat name="fpu_accesses" value="11844" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -247,15 +247,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20741" />
-        <stat name="read_misses" value="1018" />
+        <stat name="read_accesses" value="20765" />
+        <stat name="read_misses" value="1012" />
         <stat name="conflicts" value="stats.system.cpu0.icache.replacements" />
       </component>
       <component id="system.core0.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38183" />
-        <stat name="total_misses" value="667" />
+        <stat name="total_accesses" value="38204" />
+        <stat name="total_misses" value="663" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core0.dcache" name="dcache">
@@ -265,10 +265,10 @@
         <param name="buffer_sizes" value="4,4,4,4" />
 
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20037.5" />
-        <stat name="write_accesses" value="20037.5" />
-        <stat name="read_misses" value="1098.0" />
-        <stat name="write_misses" value="1098.0" />
+        <stat name="read_accesses" value="19964.5" />
+        <stat name="write_accesses" value="19964.5" />
+        <stat name="read_misses" value="1134.0" />
+        <stat name="write_misses" value="1134.0" />
         <stat name="conflicts" value="stats.system.cpu0.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -277,7 +277,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36102" />
+        <stat name="read_accesses" value="36077" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -374,58 +374,58 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="272127" />
-      <stat name="int_instructions" value="206105" />
+      <stat name="total_instructions" value="270468" />
+      <stat name="int_instructions" value="204799" />
 
-      <stat name="fp_instructions" value="766" />
-      <stat name="branch_instructions" value="30906" />
-      <stat name="branch_mispredictions" value="2708" />
-      <stat name="load_instructions" value="38181" />
-      <stat name="store_instructions" value="16405" />
+      <stat name="fp_instructions" value="770" />
+      <stat name="branch_instructions" value="30534" />
+      <stat name="branch_mispredictions" value="2695" />
+      <stat name="load_instructions" value="37959" />
+      <stat name="store_instructions" value="16337" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="310649" />
+      <stat name="committed_int_instructions" value="302501" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="446819" />
-      <stat name="idle_cycles" value="120954" />
-      <stat name="busy_cycles" value="325865" />
+      <stat name="total_cycles" value="441617" />
+      <stat name="idle_cycles" value="124364" />
+      <stat name="busy_cycles" value="317253" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="603034" />
-      <stat name="ROB_writes" value="628204" />
+      <stat name="ROB_reads" value="592056" />
+      <stat name="ROB_writes" value="622266" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="421439" />
+      <stat name="rename_reads" value="417658" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="220275" />
+      <stat name="rename_writes" value="218348" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26172" />
-      <stat name="fp_rename_writes" value="13679" />
+      <stat name="fp_rename_reads" value="25896" />
+      <stat name="fp_rename_writes" value="13538" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="851438" />
-      <stat name="inst_window_writes" value="391758" />
-      <stat name="inst_window_wakeup_accesses" value="252397" />
-      <stat name="fp_inst_window_reads" value="23897" />
-      <stat name="fp_inst_window_writes" value="23271" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10873" />
+      <stat name="inst_window_reads" value="839472" />
+      <stat name="inst_window_writes" value="386771" />
+      <stat name="inst_window_wakeup_accesses" value="250962" />
+      <stat name="fp_inst_window_reads" value="23762" />
+      <stat name="fp_inst_window_writes" value="22959" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10853" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328916" />
-      <stat name="float_regfile_reads" value="16325" />
-      <stat name="int_regfile_writes" value="195700" />
-      <stat name="float_regfile_writes" value="8979" />
+      <stat name="int_regfile_reads" value="327342" />
+      <stat name="float_regfile_reads" value="16312" />
+      <stat name="int_regfile_writes" value="194543" />
+      <stat name="float_regfile_writes" value="8937" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="262056" />
-      <stat name="fpu_accesses" value="11994" />
+      <stat name="ialu_accesses" value="260349" />
+      <stat name="fpu_accesses" value="11933" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -484,15 +484,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10486.0" />
-        <stat name="read_misses" value="508.0" />
+        <stat name="read_accesses" value="10371.5" />
+        <stat name="read_misses" value="506.5" />
         <stat name="conflicts" value="stats.system.cpu1.icache.replacements" />
       </component>
       <component id="system.core1.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38452" />
-        <stat name="total_misses" value="639" />
+        <stat name="total_accesses" value="38245" />
+        <stat name="total_misses" value="697" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core1.dcache" name="dcache">
@@ -500,10 +500,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20096.5" />
-        <stat name="write_accesses" value="20096.5" />
-        <stat name="read_misses" value="1077.5" />
-        <stat name="write_misses" value="1077.5" />
+        <stat name="read_accesses" value="19929.0" />
+        <stat name="write_accesses" value="19929.0" />
+        <stat name="read_misses" value="1105.0" />
+        <stat name="write_misses" value="1105.0" />
         <stat name="conflicts" value="stats.system.cpu1.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -512,7 +512,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36565" />
+        <stat name="read_accesses" value="36153" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -609,57 +609,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="272219" />
-      <stat name="int_instructions" value="206162" />
-      <stat name="fp_instructions" value="766" />
-      <stat name="branch_instructions" value="30885" />
-      <stat name="branch_mispredictions" value="2708" />
-      <stat name="load_instructions" value="38270" />
-      <stat name="store_instructions" value="16475" />
+      <stat name="total_instructions" value="271111" />
+      <stat name="int_instructions" value="205266" />
+      <stat name="fp_instructions" value="771" />
+      <stat name="branch_instructions" value="30604" />
+      <stat name="branch_mispredictions" value="2706" />
+      <stat name="load_instructions" value="38102" />
+      <stat name="store_instructions" value="16315" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="310152" />
+      <stat name="committed_int_instructions" value="307034" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="447098" />
-      <stat name="idle_cycles" value="121799" />
-      <stat name="busy_cycles" value="325299" />
+      <stat name="total_cycles" value="448441" />
+      <stat name="idle_cycles" value="126427" />
+      <stat name="busy_cycles" value="322014" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="602660" />
-      <stat name="ROB_writes" value="628387" />
+      <stat name="ROB_reads" value="597415" />
+      <stat name="ROB_writes" value="623895" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="421140" />
+      <stat name="rename_reads" value="418807" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="220013" />
+      <stat name="rename_writes" value="218891" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="25944" />
-      <stat name="fp_rename_writes" value="13553" />
+      <stat name="fp_rename_reads" value="26042" />
+      <stat name="fp_rename_writes" value="13610" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="851272" />
-      <stat name="inst_window_writes" value="392550" />
-      <stat name="inst_window_wakeup_accesses" value="252643" />
-      <stat name="fp_inst_window_reads" value="23621" />
-      <stat name="fp_inst_window_writes" value="22949" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10785" />
+      <stat name="inst_window_reads" value="845534" />
+      <stat name="inst_window_writes" value="388249" />
+      <stat name="inst_window_wakeup_accesses" value="251404" />
+      <stat name="fp_inst_window_reads" value="23880" />
+      <stat name="fp_inst_window_writes" value="23059" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10926" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328965" />
-      <stat name="float_regfile_reads" value="16175" />
-      <stat name="int_regfile_writes" value="195853" />
-      <stat name="float_regfile_writes" value="8871" />
+      <stat name="int_regfile_reads" value="328254" />
+      <stat name="float_regfile_reads" value="16395" />
+      <stat name="int_regfile_writes" value="194938" />
+      <stat name="float_regfile_writes" value="8999" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="262216" />
-      <stat name="fpu_accesses" value="11858" />
+      <stat name="ialu_accesses" value="260975" />
+      <stat name="fpu_accesses" value="11993" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -718,15 +718,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10494.0" />
-        <stat name="read_misses" value="513.5" />
+        <stat name="read_accesses" value="10426.5" />
+        <stat name="read_misses" value="512.0" />
         <stat name="conflicts" value="stats.system.cpu2.icache.replacements" />
       </component>
       <component id="system.core2.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38448" />
-        <stat name="total_misses" value="653" />
+        <stat name="total_accesses" value="38334" />
+        <stat name="total_misses" value="680" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core2.dcache" name="dcache">
@@ -734,10 +734,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="19987.5" />
-        <stat name="write_accesses" value="19987.5" />
-        <stat name="read_misses" value="1122.0" />
-        <stat name="write_misses" value="1122.0" />
+        <stat name="read_accesses" value="20100.0" />
+        <stat name="write_accesses" value="20100.0" />
+        <stat name="read_misses" value="1091.0" />
+        <stat name="write_misses" value="1091.0" />
         <stat name="conflicts" value="stats.system.cpu2.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -746,7 +746,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36581" />
+        <stat name="read_accesses" value="36228" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -843,57 +843,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="271762" />
-      <stat name="int_instructions" value="205832" />
-      <stat name="fp_instructions" value="777" />
-      <stat name="branch_instructions" value="30761" />
-      <stat name="branch_mispredictions" value="2710" />
-      <stat name="load_instructions" value="38034" />
-      <stat name="store_instructions" value="16402" />
+      <stat name="total_instructions" value="271002" />
+      <stat name="int_instructions" value="205219" />
+      <stat name="fp_instructions" value="772" />
+      <stat name="branch_instructions" value="30687" />
+      <stat name="branch_mispredictions" value="2690" />
+      <stat name="load_instructions" value="38065" />
+      <stat name="store_instructions" value="16358" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="316732" />
+      <stat name="committed_int_instructions" value="311632" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="458285" />
-      <stat name="idle_cycles" value="126501" />
-      <stat name="busy_cycles" value="331784" />
+      <stat name="total_cycles" value="457013" />
+      <stat name="idle_cycles" value="130498" />
+      <stat name="busy_cycles" value="326515" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="608426" />
-      <stat name="ROB_writes" value="626736" />
+      <stat name="ROB_reads" value="602344" />
+      <stat name="ROB_writes" value="624448" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="420421" />
+      <stat name="rename_reads" value="419215" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="219701" />
+      <stat name="rename_writes" value="219111" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26268" />
-      <stat name="fp_rename_writes" value="13727" />
+      <stat name="fp_rename_reads" value="26032" />
+      <stat name="fp_rename_writes" value="13606" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="856430" />
-      <stat name="inst_window_writes" value="390369" />
-      <stat name="inst_window_wakeup_accesses" value="252186" />
-      <stat name="fp_inst_window_reads" value="24012" />
-      <stat name="fp_inst_window_writes" value="23311" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10978" />
+      <stat name="inst_window_reads" value="849870" />
+      <stat name="inst_window_writes" value="388590" />
+      <stat name="inst_window_wakeup_accesses" value="251432" />
+      <stat name="fp_inst_window_reads" value="23743" />
+      <stat name="fp_inst_window_writes" value="23097" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10808" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328719" />
-      <stat name="float_regfile_reads" value="16459" />
-      <stat name="int_regfile_writes" value="195504" />
-      <stat name="float_regfile_writes" value="9012" />
+      <stat name="int_regfile_reads" value="327867" />
+      <stat name="float_regfile_reads" value="16209" />
+      <stat name="int_regfile_writes" value="194967" />
+      <stat name="float_regfile_writes" value="8891" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="261568" />
-      <stat name="fpu_accesses" value="12063" />
+      <stat name="ialu_accesses" value="260908" />
+      <stat name="fpu_accesses" value="11926" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -952,15 +952,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10462.0" />
-        <stat name="read_misses" value="509.0" />
+        <stat name="read_accesses" value="10429.5" />
+        <stat name="read_misses" value="506.0" />
         <stat name="conflicts" value="stats.system.cpu3.icache.replacements" />
       </component>
       <component id="system.core3.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38450" />
-        <stat name="total_misses" value="685" />
+        <stat name="total_accesses" value="38321" />
+        <stat name="total_misses" value="682" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core3.dcache" name="dcache">
@@ -968,10 +968,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20085.0" />
-        <stat name="write_accesses" value="20085.0" />
-        <stat name="read_misses" value="1139.5" />
-        <stat name="write_misses" value="1139.5" />
+        <stat name="read_accesses" value="20054.0" />
+        <stat name="write_accesses" value="20054.0" />
+        <stat name="read_misses" value="1104.5" />
+        <stat name="write_misses" value="1104.5" />
         <stat name="conflicts" value="stats.system.cpu3.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -980,7 +980,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36364" />
+        <stat name="read_accesses" value="36316" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -1077,57 +1077,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="271095" />
-      <stat name="int_instructions" value="205383" />
-      <stat name="fp_instructions" value="763" />
-      <stat name="branch_instructions" value="30702" />
-      <stat name="branch_mispredictions" value="2712" />
-      <stat name="load_instructions" value="37970" />
-      <stat name="store_instructions" value="16341" />
+      <stat name="total_instructions" value="270446" />
+      <stat name="int_instructions" value="204674" />
+      <stat name="fp_instructions" value="768" />
+      <stat name="branch_instructions" value="30456" />
+      <stat name="branch_mispredictions" value="2690" />
+      <stat name="load_instructions" value="38042" />
+      <stat name="store_instructions" value="16253" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="301577" />
+      <stat name="committed_int_instructions" value="306728" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="446858" />
-      <stat name="idle_cycles" value="130336" />
-      <stat name="busy_cycles" value="316522" />
+      <stat name="total_cycles" value="448222" />
+      <stat name="idle_cycles" value="126665" />
+      <stat name="busy_cycles" value="321557" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="592476" />
-      <stat name="ROB_writes" value="624957" />
+      <stat name="ROB_reads" value="596374" />
+      <stat name="ROB_writes" value="622259" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="419643" />
+      <stat name="rename_reads" value="417218" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="219364" />
+      <stat name="rename_writes" value="218101" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26106" />
-      <stat name="fp_rename_writes" value="13646" />
+      <stat name="fp_rename_reads" value="26233" />
+      <stat name="fp_rename_writes" value="13713" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="840032" />
-      <stat name="inst_window_writes" value="389173" />
-      <stat name="inst_window_wakeup_accesses" value="251618" />
-      <stat name="fp_inst_window_reads" value="23815" />
-      <stat name="fp_inst_window_writes" value="23093" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10913" />
+      <stat name="inst_window_reads" value="843642" />
+      <stat name="inst_window_writes" value="386235" />
+      <stat name="inst_window_wakeup_accesses" value="250672" />
+      <stat name="fp_inst_window_reads" value="23980" />
+      <stat name="fp_inst_window_writes" value="23265" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10973" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="327980" />
-      <stat name="float_regfile_reads" value="16362" />
-      <stat name="int_regfile_writes" value="195088" />
-      <stat name="float_regfile_writes" value="8976" />
+      <stat name="int_regfile_reads" value="327298" />
+      <stat name="float_regfile_reads" value="16496" />
+      <stat name="int_regfile_writes" value="194368" />
+      <stat name="float_regfile_writes" value="9029" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="261031" />
-      <stat name="fpu_accesses" value="11960" />
+      <stat name="ialu_accesses" value="260196" />
+      <stat name="fpu_accesses" value="12047" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -1186,15 +1186,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10456.0" />
-        <stat name="read_misses" value="505.5" />
+        <stat name="read_accesses" value="10351.5" />
+        <stat name="read_misses" value="506.0" />
         <stat name="conflicts" value="stats.system.cpu4.icache.replacements" />
       </component>
       <component id="system.core4.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38346" />
-        <stat name="total_misses" value="667" />
+        <stat name="total_accesses" value="38222" />
+        <stat name="total_misses" value="672" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core4.dcache" name="dcache">
@@ -1202,10 +1202,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20039.0" />
-        <stat name="write_accesses" value="20039.0" />
-        <stat name="read_misses" value="1126.5" />
-        <stat name="write_misses" value="1126.5" />
+        <stat name="read_accesses" value="20070.5" />
+        <stat name="write_accesses" value="20070.5" />
+        <stat name="read_misses" value="1073.5" />
+        <stat name="write_misses" value="1073.5" />
         <stat name="conflicts" value="stats.system.cpu4.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -1214,7 +1214,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36307" />
+        <stat name="read_accesses" value="36038" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -1311,57 +1311,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="270977" />
-      <stat name="int_instructions" value="205254" />
-      <stat name="fp_instructions" value="768" />
-      <stat name="branch_instructions" value="30591" />
-      <stat name="branch_mispredictions" value="2702" />
-      <stat name="load_instructions" value="38025" />
-      <stat name="store_instructions" value="16343" />
+      <stat name="total_instructions" value="271189" />
+      <stat name="int_instructions" value="205385" />
+      <stat name="fp_instructions" value="771" />
+      <stat name="branch_instructions" value="30614" />
+      <stat name="branch_mispredictions" value="2698" />
+      <stat name="load_instructions" value="37996" />
+      <stat name="store_instructions" value="16333" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="304286" />
+      <stat name="committed_int_instructions" value="307651" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="447842" />
-      <stat name="idle_cycles" value="128639" />
-      <stat name="busy_cycles" value="319203" />
+      <stat name="total_cycles" value="456980" />
+      <stat name="idle_cycles" value="134416" />
+      <stat name="busy_cycles" value="322564" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="594731" />
-      <stat name="ROB_writes" value="623979" />
+      <stat name="ROB_reads" value="598211" />
+      <stat name="ROB_writes" value="624371" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="418630" />
+      <stat name="rename_reads" value="418731" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218803" />
+      <stat name="rename_writes" value="218873" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="25936" />
-      <stat name="fp_rename_writes" value="13555" />
+      <stat name="fp_rename_reads" value="26302" />
+      <stat name="fp_rename_writes" value="13748" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="842588" />
-      <stat name="inst_window_writes" value="388183" />
-      <stat name="inst_window_wakeup_accesses" value="251450" />
-      <stat name="fp_inst_window_reads" value="23713" />
-      <stat name="fp_inst_window_writes" value="23001" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10851" />
+      <stat name="inst_window_reads" value="846085" />
+      <stat name="inst_window_writes" value="388290" />
+      <stat name="inst_window_wakeup_accesses" value="251635" />
+      <stat name="fp_inst_window_reads" value="23976" />
+      <stat name="fp_inst_window_writes" value="23295" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10980" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328046" />
-      <stat name="float_regfile_reads" value="16258" />
-      <stat name="int_regfile_writes" value="194933" />
-      <stat name="float_regfile_writes" value="8936" />
+      <stat name="int_regfile_reads" value="328283" />
+      <stat name="float_regfile_reads" value="16498" />
+      <stat name="int_regfile_writes" value="195095" />
+      <stat name="float_regfile_writes" value="9062" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="260920" />
-      <stat name="fpu_accesses" value="11912" />
+      <stat name="ialu_accesses" value="260982" />
+      <stat name="fpu_accesses" value="12051" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -1420,15 +1420,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10431.5" />
-        <stat name="read_misses" value="505.5" />
+        <stat name="read_accesses" value="10458.5" />
+        <stat name="read_misses" value="514.0" />
         <stat name="conflicts" value="stats.system.cpu5.icache.replacements" />
       </component>
       <component id="system.core5.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38316" />
-        <stat name="total_misses" value="651" />
+        <stat name="total_accesses" value="38312" />
+        <stat name="total_misses" value="670" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core5.dcache" name="dcache">
@@ -1436,10 +1436,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20083.5" />
-        <stat name="write_accesses" value="20083.5" />
-        <stat name="read_misses" value="1088.5" />
-        <stat name="write_misses" value="1088.5" />
+        <stat name="read_accesses" value="20044.0" />
+        <stat name="write_accesses" value="20044.0" />
+        <stat name="read_misses" value="1095.0" />
+        <stat name="write_misses" value="1095.0" />
         <stat name="conflicts" value="stats.system.cpu5.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -1448,7 +1448,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36232" />
+        <stat name="read_accesses" value="36239" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -1545,57 +1545,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="271576" />
-      <stat name="int_instructions" value="205777" />
-      <stat name="fp_instructions" value="763" />
-      <stat name="branch_instructions" value="30805" />
-      <stat name="branch_mispredictions" value="2723" />
-      <stat name="load_instructions" value="38062" />
-      <stat name="store_instructions" value="16314" />
+      <stat name="total_instructions" value="271339" />
+      <stat name="int_instructions" value="205483" />
+      <stat name="fp_instructions" value="775" />
+      <stat name="branch_instructions" value="30615" />
+      <stat name="branch_mispredictions" value="2691" />
+      <stat name="load_instructions" value="38104" />
+      <stat name="store_instructions" value="16357" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="311278" />
+      <stat name="committed_int_instructions" value="318301" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="458185" />
-      <stat name="idle_cycles" value="131845" />
-      <stat name="busy_cycles" value="326340" />
+      <stat name="total_cycles" value="464463" />
+      <stat name="idle_cycles" value="131193" />
+      <stat name="busy_cycles" value="333270" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="602434" />
-      <stat name="ROB_writes" value="625640" />
+      <stat name="ROB_reads" value="609344" />
+      <stat name="ROB_writes" value="625249" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="419791" />
+      <stat name="rename_reads" value="419798" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="219415" />
+      <stat name="rename_writes" value="219383" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26035" />
-      <stat name="fp_rename_writes" value="13607" />
+      <stat name="fp_rename_reads" value="26099" />
+      <stat name="fp_rename_writes" value="13639" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="850716" />
-      <stat name="inst_window_writes" value="389857" />
-      <stat name="inst_window_wakeup_accesses" value="252050" />
-      <stat name="fp_inst_window_reads" value="23854" />
-      <stat name="fp_inst_window_writes" value="23069" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10920" />
+      <stat name="inst_window_reads" value="857261" />
+      <stat name="inst_window_writes" value="389425" />
+      <stat name="inst_window_wakeup_accesses" value="251861" />
+      <stat name="fp_inst_window_reads" value="23801" />
+      <stat name="fp_inst_window_writes" value="23077" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10888" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328422" />
-      <stat name="float_regfile_reads" value="16376" />
-      <stat name="int_regfile_writes" value="195427" />
-      <stat name="float_regfile_writes" value="8969" />
+      <stat name="int_regfile_reads" value="328410" />
+      <stat name="float_regfile_reads" value="16325" />
+      <stat name="int_regfile_writes" value="195327" />
+      <stat name="float_regfile_writes" value="8973" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="261467" />
-      <stat name="fpu_accesses" value="11988" />
+      <stat name="ialu_accesses" value="261203" />
+      <stat name="fpu_accesses" value="11958" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -1654,15 +1654,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10503.0" />
-        <stat name="read_misses" value="521.0" />
+        <stat name="read_accesses" value="10454.5" />
+        <stat name="read_misses" value="512.0" />
         <stat name="conflicts" value="stats.system.cpu6.icache.replacements" />
       </component>
       <component id="system.core6.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38360" />
-        <stat name="total_misses" value="681" />
+        <stat name="total_accesses" value="38436" />
+        <stat name="total_misses" value="702" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core6.dcache" name="dcache">
@@ -1670,10 +1670,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20068.5" />
-        <stat name="write_accesses" value="20068.5" />
-        <stat name="read_misses" value="1095.0" />
-        <stat name="write_misses" value="1095.0" />
+        <stat name="read_accesses" value="20106.0" />
+        <stat name="write_accesses" value="20106.0" />
+        <stat name="read_misses" value="1096.0" />
+        <stat name="write_misses" value="1096.0" />
         <stat name="conflicts" value="stats.system.cpu6.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -1682,7 +1682,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36457" />
+        <stat name="read_accesses" value="36268" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -1779,57 +1779,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="270633" />
-      <stat name="int_instructions" value="205005" />
-      <stat name="fp_instructions" value="769" />
-      <stat name="branch_instructions" value="30627" />
-      <stat name="branch_mispredictions" value="2684" />
-      <stat name="load_instructions" value="38039" />
-      <stat name="store_instructions" value="16313" />
+      <stat name="total_instructions" value="271170" />
+      <stat name="int_instructions" value="205321" />
+      <stat name="fp_instructions" value="774" />
+      <stat name="branch_instructions" value="30588" />
+      <stat name="branch_mispredictions" value="2700" />
+      <stat name="load_instructions" value="38112" />
+      <stat name="store_instructions" value="16306" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="317542" />
+      <stat name="committed_int_instructions" value="313346" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="466559" />
-      <stat name="idle_cycles" value="134162" />
-      <stat name="busy_cycles" value="332397" />
+      <stat name="total_cycles" value="464615" />
+      <stat name="idle_cycles" value="136407" />
+      <stat name="busy_cycles" value="328208" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="607505" />
-      <stat name="ROB_writes" value="623328" />
+      <stat name="ROB_reads" value="603644" />
+      <stat name="ROB_writes" value="623841" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="418451" />
+      <stat name="rename_reads" value="418729" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218735" />
+      <stat name="rename_writes" value="218891" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="25758" />
-      <stat name="fp_rename_writes" value="13464" />
+      <stat name="fp_rename_reads" value="26027" />
+      <stat name="fp_rename_writes" value="13605" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="855159" />
-      <stat name="inst_window_writes" value="387721" />
-      <stat name="inst_window_wakeup_accesses" value="251185" />
-      <stat name="fp_inst_window_reads" value="23545" />
-      <stat name="fp_inst_window_writes" value="22799" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10757" />
+      <stat name="inst_window_reads" value="851828" />
+      <stat name="inst_window_writes" value="388322" />
+      <stat name="inst_window_wakeup_accesses" value="251492" />
+      <stat name="fp_inst_window_reads" value="23870" />
+      <stat name="fp_inst_window_writes" value="23023" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10936" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="327527" />
-      <stat name="float_regfile_reads" value="16099" />
-      <stat name="int_regfile_writes" value="194749" />
-      <stat name="float_regfile_writes" value="8824" />
+      <stat name="int_regfile_reads" value="328007" />
+      <stat name="float_regfile_reads" value="16412" />
+      <stat name="int_regfile_writes" value="195006" />
+      <stat name="float_regfile_writes" value="8993" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="260568" />
-      <stat name="fpu_accesses" value="11830" />
+      <stat name="ialu_accesses" value="261038" />
+      <stat name="fpu_accesses" value="11989" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -1888,15 +1888,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10398.0" />
-        <stat name="read_misses" value="509.0" />
+        <stat name="read_accesses" value="10429.5" />
+        <stat name="read_misses" value="515.5" />
         <stat name="conflicts" value="stats.system.cpu7.icache.replacements" />
       </component>
       <component id="system.core7.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38291" />
-        <stat name="total_misses" value="692" />
+        <stat name="total_accesses" value="38321" />
+        <stat name="total_misses" value="673" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core7.dcache" name="dcache">
@@ -1904,10 +1904,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="19915.0" />
-        <stat name="write_accesses" value="19915.0" />
-        <stat name="read_misses" value="1139.5" />
-        <stat name="write_misses" value="1139.5" />
+        <stat name="read_accesses" value="20045.0" />
+        <stat name="write_accesses" value="20045.0" />
+        <stat name="read_misses" value="1088.0" />
+        <stat name="write_misses" value="1088.0" />
         <stat name="conflicts" value="stats.system.cpu7.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -1916,7 +1916,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36223" />
+        <stat name="read_accesses" value="36249" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -2013,57 +2013,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="270865" />
-      <stat name="int_instructions" value="205139" />
-      <stat name="fp_instructions" value="772" />
-      <stat name="branch_instructions" value="30546" />
-      <stat name="branch_mispredictions" value="2697" />
-      <stat name="load_instructions" value="38048" />
-      <stat name="store_instructions" value="16296" />
+      <stat name="total_instructions" value="272051" />
+      <stat name="int_instructions" value="205992" />
+      <stat name="fp_instructions" value="776" />
+      <stat name="branch_instructions" value="30757" />
+      <stat name="branch_mispredictions" value="2690" />
+      <stat name="load_instructions" value="38235" />
+      <stat name="store_instructions" value="16415" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="308968" />
+      <stat name="committed_int_instructions" value="313565" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="456352" />
-      <stat name="idle_cycles" value="132577" />
-      <stat name="busy_cycles" value="323775" />
+      <stat name="total_cycles" value="457018" />
+      <stat name="idle_cycles" value="128411" />
+      <stat name="busy_cycles" value="328607" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="599063" />
-      <stat name="ROB_writes" value="623229" />
+      <stat name="ROB_reads" value="605410" />
+      <stat name="ROB_writes" value="627293" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="418714" />
+      <stat name="rename_reads" value="420671" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218890" />
+      <stat name="rename_writes" value="219853" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="25908" />
-      <stat name="fp_rename_writes" value="13543" />
+      <stat name="fp_rename_reads" value="26110" />
+      <stat name="fp_rename_writes" value="13645" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="846886" />
-      <stat name="inst_window_writes" value="387838" />
-      <stat name="inst_window_wakeup_accesses" value="251286" />
-      <stat name="fp_inst_window_reads" value="23772" />
-      <stat name="fp_inst_window_writes" value="23033" />
+      <stat name="inst_window_reads" value="853967" />
+      <stat name="inst_window_writes" value="391072" />
+      <stat name="inst_window_wakeup_accesses" value="252436" />
+      <stat name="fp_inst_window_reads" value="23827" />
+      <stat name="fp_inst_window_writes" value="23199" />
       <stat name="fp_inst_window_wakeup_accesses" value="10877" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328019" />
-      <stat name="float_regfile_reads" value="16298" />
-      <stat name="int_regfile_writes" value="194826" />
-      <stat name="float_regfile_writes" value="8939" />
+      <stat name="int_regfile_reads" value="328909" />
+      <stat name="float_regfile_reads" value="16284" />
+      <stat name="int_regfile_writes" value="195680" />
+      <stat name="float_regfile_writes" value="8921" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="260834" />
-      <stat name="fpu_accesses" value="11943" />
+      <stat name="ialu_accesses" value="261905" />
+      <stat name="fpu_accesses" value="11968" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -2122,15 +2122,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10399.0" />
-        <stat name="read_misses" value="520.5" />
+        <stat name="read_accesses" value="10476.5" />
+        <stat name="read_misses" value="519.0" />
         <stat name="conflicts" value="stats.system.cpu8.icache.replacements" />
       </component>
       <component id="system.core8.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38259" />
-        <stat name="total_misses" value="689" />
+        <stat name="total_accesses" value="38435" />
+        <stat name="total_misses" value="675" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core8.dcache" name="dcache">
@@ -2138,10 +2138,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20104.5" />
-        <stat name="write_accesses" value="20104.5" />
-        <stat name="read_misses" value="1052.5" />
-        <stat name="write_misses" value="1052.5" />
+        <stat name="read_accesses" value="20028.5" />
+        <stat name="write_accesses" value="20028.5" />
+        <stat name="read_misses" value="1119.5" />
+        <stat name="write_misses" value="1119.5" />
         <stat name="conflicts" value="stats.system.cpu8.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -2150,7 +2150,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36151" />
+        <stat name="read_accesses" value="36428" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -2247,57 +2247,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="271837" />
-      <stat name="int_instructions" value="205793" />
+      <stat name="total_instructions" value="271928" />
+      <stat name="int_instructions" value="205924" />
       <stat name="fp_instructions" value="772" />
-      <stat name="branch_instructions" value="30737" />
-      <stat name="branch_mispredictions" value="2704" />
-      <stat name="load_instructions" value="38181" />
-      <stat name="store_instructions" value="16355" />
+      <stat name="branch_instructions" value="30703" />
+      <stat name="branch_mispredictions" value="2709" />
+      <stat name="load_instructions" value="38229" />
+      <stat name="store_instructions" value="16359" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="309904" />
+      <stat name="committed_int_instructions" value="313962" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="459733" />
-      <stat name="idle_cycles" value="134811" />
-      <stat name="busy_cycles" value="324922" />
+      <stat name="total_cycles" value="464502" />
+      <stat name="idle_cycles" value="135379" />
+      <stat name="busy_cycles" value="329123" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="601506" />
-      <stat name="ROB_writes" value="626475" />
+      <stat name="ROB_reads" value="605894" />
+      <stat name="ROB_writes" value="627442" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="420427" />
+      <stat name="rename_reads" value="420211" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="219737" />
+      <stat name="rename_writes" value="219636" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26269" />
-      <stat name="fp_rename_writes" value="13729" />
+      <stat name="fp_rename_reads" value="26310" />
+      <stat name="fp_rename_writes" value="13751" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="849741" />
-      <stat name="inst_window_writes" value="390386" />
-      <stat name="inst_window_wakeup_accesses" value="252025" />
-      <stat name="fp_inst_window_reads" value="24052" />
-      <stat name="fp_inst_window_writes" value="23325" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10978" />
+      <stat name="inst_window_reads" value="854293" />
+      <stat name="inst_window_writes" value="390776" />
+      <stat name="inst_window_wakeup_accesses" value="252195" />
+      <stat name="fp_inst_window_reads" value="23845" />
+      <stat name="fp_inst_window_writes" value="23393" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10885" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328619" />
-      <stat name="float_regfile_reads" value="16456" />
-      <stat name="int_regfile_writes" value="195452" />
-      <stat name="float_regfile_writes" value="9024" />
+      <stat name="int_regfile_reads" value="328749" />
+      <stat name="float_regfile_reads" value="16297" />
+      <stat name="int_regfile_writes" value="195570" />
+      <stat name="float_regfile_writes" value="8950" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="261651" />
-      <stat name="fpu_accesses" value="12080" />
+      <stat name="ialu_accesses" value="261782" />
+      <stat name="fpu_accesses" value="11987" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -2356,15 +2356,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10464.0" />
-        <stat name="read_misses" value="510.0" />
+        <stat name="read_accesses" value="10490.5" />
+        <stat name="read_misses" value="524.0" />
         <stat name="conflicts" value="stats.system.cpu9.icache.replacements" />
       </component>
       <component id="system.core9.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38419" />
-        <stat name="total_misses" value="686" />
+        <stat name="total_accesses" value="38456" />
+        <stat name="total_misses" value="690" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core9.dcache" name="dcache">
@@ -2372,10 +2372,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20096.0" />
-        <stat name="write_accesses" value="20096.0" />
-        <stat name="read_misses" value="1102.0" />
-        <stat name="write_misses" value="1102.0" />
+        <stat name="read_accesses" value="20007.0" />
+        <stat name="write_accesses" value="20007.0" />
+        <stat name="read_misses" value="1066.0" />
+        <stat name="write_misses" value="1066.0" />
         <stat name="conflicts" value="stats.system.cpu9.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -2384,7 +2384,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36399" />
+        <stat name="read_accesses" value="36398" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -2481,57 +2481,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="271705" />
-      <stat name="int_instructions" value="205760" />
-      <stat name="fp_instructions" value="774" />
-      <stat name="branch_instructions" value="30701" />
-      <stat name="branch_mispredictions" value="2693" />
-      <stat name="load_instructions" value="38214" />
-      <stat name="store_instructions" value="16375" />
+      <stat name="total_instructions" value="270841" />
+      <stat name="int_instructions" value="205032" />
+      <stat name="fp_instructions" value="777" />
+      <stat name="branch_instructions" value="30575" />
+      <stat name="branch_mispredictions" value="2702" />
+      <stat name="load_instructions" value="38015" />
+      <stat name="store_instructions" value="16344" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="319731" />
+      <stat name="committed_int_instructions" value="313792" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="469814" />
-      <stat name="idle_cycles" value="135078" />
-      <stat name="busy_cycles" value="334736" />
+      <stat name="total_cycles" value="465218" />
+      <stat name="idle_cycles" value="136553" />
+      <stat name="busy_cycles" value="328665" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="611255" />
-      <stat name="ROB_writes" value="626242" />
+      <stat name="ROB_reads" value="604116" />
+      <stat name="ROB_writes" value="623769" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="420412" />
+      <stat name="rename_reads" value="418721" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="219755" />
+      <stat name="rename_writes" value="218813" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="25850" />
-      <stat name="fp_rename_writes" value="13512" />
+      <stat name="fp_rename_reads" value="26304" />
+      <stat name="fp_rename_writes" value="13745" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="859551" />
-      <stat name="inst_window_writes" value="390257" />
-      <stat name="inst_window_wakeup_accesses" value="252118" />
-      <stat name="fp_inst_window_reads" value="23710" />
-      <stat name="fp_inst_window_writes" value="22929" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10805" />
+      <stat name="inst_window_reads" value="851553" />
+      <stat name="inst_window_writes" value="387860" />
+      <stat name="inst_window_wakeup_accesses" value="251225" />
+      <stat name="fp_inst_window_reads" value="23925" />
+      <stat name="fp_inst_window_writes" value="23363" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10897" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328688" />
-      <stat name="float_regfile_reads" value="16208" />
-      <stat name="int_regfile_writes" value="195536" />
-      <stat name="float_regfile_writes" value="8896" />
+      <stat name="int_regfile_reads" value="327720" />
+      <stat name="float_regfile_reads" value="16310" />
+      <stat name="int_regfile_writes" value="194746" />
+      <stat name="float_regfile_writes" value="8969" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="261671" />
-      <stat name="fpu_accesses" value="11905" />
+      <stat name="ialu_accesses" value="260676" />
+      <stat name="fpu_accesses" value="12016" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -2590,15 +2590,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10461.5" />
-        <stat name="read_misses" value="506.5" />
+        <stat name="read_accesses" value="10425.5" />
+        <stat name="read_misses" value="513.5" />
         <stat name="conflicts" value="stats.system.cpu10.icache.replacements" />
       </component>
       <component id="system.core10.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38431" />
-        <stat name="total_misses" value="728" />
+        <stat name="total_accesses" value="38297" />
+        <stat name="total_misses" value="703" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core10.dcache" name="dcache">
@@ -2606,10 +2606,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20084.0" />
-        <stat name="write_accesses" value="20084.0" />
-        <stat name="read_misses" value="1114.0" />
-        <stat name="write_misses" value="1114.0" />
+        <stat name="read_accesses" value="20081.5" />
+        <stat name="write_accesses" value="20081.5" />
+        <stat name="read_misses" value="1085.0" />
+        <stat name="write_misses" value="1085.0" />
         <stat name="conflicts" value="stats.system.cpu10.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -2618,7 +2618,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36372" />
+        <stat name="read_accesses" value="36192" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -2715,57 +2715,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="270790" />
-      <stat name="int_instructions" value="205043" />
-      <stat name="fp_instructions" value="769" />
-      <stat name="branch_instructions" value="30602" />
-      <stat name="branch_mispredictions" value="2699" />
-      <stat name="load_instructions" value="38020" />
-      <stat name="store_instructions" value="16284" />
+      <stat name="total_instructions" value="272396" />
+      <stat name="int_instructions" value="206246" />
+      <stat name="fp_instructions" value="772" />
+      <stat name="branch_instructions" value="30794" />
+      <stat name="branch_mispredictions" value="2706" />
+      <stat name="load_instructions" value="38209" />
+      <stat name="store_instructions" value="16423" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="316109" />
+      <stat name="committed_int_instructions" value="324123" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="469825" />
-      <stat name="idle_cycles" value="138876" />
-      <stat name="busy_cycles" value="330949" />
+      <stat name="total_cycles" value="476192" />
+      <stat name="idle_cycles" value="136877" />
+      <stat name="busy_cycles" value="339315" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="606399" />
-      <stat name="ROB_writes" value="623661" />
+      <stat name="ROB_reads" value="616623" />
+      <stat name="ROB_writes" value="628255" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="418820" />
+      <stat name="rename_reads" value="421130" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218974" />
+      <stat name="rename_writes" value="220020" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26219" />
-      <stat name="fp_rename_writes" value="13708" />
+      <stat name="fp_rename_reads" value="26540" />
+      <stat name="fp_rename_writes" value="13865" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="853720" />
-      <stat name="inst_window_writes" value="387780" />
-      <stat name="inst_window_wakeup_accesses" value="251161" />
-      <stat name="fp_inst_window_reads" value="23908" />
-      <stat name="fp_inst_window_writes" value="23229" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10893" />
+      <stat name="inst_window_reads" value="865183" />
+      <stat name="inst_window_writes" value="391756" />
+      <stat name="inst_window_wakeup_accesses" value="252671" />
+      <stat name="fp_inst_window_reads" value="24046" />
+      <stat name="fp_inst_window_writes" value="23657" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10936" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="327664" />
-      <stat name="float_regfile_reads" value="16346" />
-      <stat name="int_regfile_writes" value="194756" />
-      <stat name="float_regfile_writes" value="8960" />
+      <stat name="int_regfile_reads" value="329266" />
+      <stat name="float_regfile_reads" value="16407" />
+      <stat name="int_regfile_writes" value="195943" />
+      <stat name="float_regfile_writes" value="9005" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="260620" />
-      <stat name="fpu_accesses" value="12005" />
+      <stat name="ialu_accesses" value="262109" />
+      <stat name="fpu_accesses" value="12074" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -2824,15 +2824,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10417.0" />
-        <stat name="read_misses" value="507.0" />
+        <stat name="read_accesses" value="10488.5" />
+        <stat name="read_misses" value="512.5" />
         <stat name="conflicts" value="stats.system.cpu11.icache.replacements" />
       </component>
       <component id="system.core11.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38282" />
-        <stat name="total_misses" value="722" />
+        <stat name="total_accesses" value="38503" />
+        <stat name="total_misses" value="703" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core11.dcache" name="dcache">
@@ -2840,10 +2840,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20028.0" />
-        <stat name="write_accesses" value="20028.0" />
-        <stat name="read_misses" value="1087.0" />
-        <stat name="write_misses" value="1087.0" />
+        <stat name="read_accesses" value="20081.0" />
+        <stat name="write_accesses" value="20081.0" />
+        <stat name="read_misses" value="1098.0" />
+        <stat name="write_misses" value="1098.0" />
         <stat name="conflicts" value="stats.system.cpu11.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -2852,7 +2852,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36204" />
+        <stat name="read_accesses" value="36477" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -2949,57 +2949,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="271398" />
-      <stat name="int_instructions" value="205491" />
-      <stat name="fp_instructions" value="759" />
-      <stat name="branch_instructions" value="30599" />
-      <stat name="branch_mispredictions" value="2714" />
-      <stat name="load_instructions" value="38103" />
-      <stat name="store_instructions" value="16339" />
+      <stat name="total_instructions" value="271697" />
+      <stat name="int_instructions" value="205763" />
+      <stat name="fp_instructions" value="764" />
+      <stat name="branch_instructions" value="30709" />
+      <stat name="branch_mispredictions" value="2691" />
+      <stat name="load_instructions" value="38096" />
+      <stat name="store_instructions" value="16395" />
       <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="308298" />
+      <stat name="committed_int_instructions" value="314873" />
       <stat name="committed_fp_instructions" value="6819" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="457696" />
-      <stat name="idle_cycles" value="134375" />
-      <stat name="busy_cycles" value="323321" />
+      <stat name="total_cycles" value="464534" />
+      <stat name="idle_cycles" value="134649" />
+      <stat name="busy_cycles" value="329885" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="599102" />
-      <stat name="ROB_writes" value="624891" />
+      <stat name="ROB_reads" value="606646" />
+      <stat name="ROB_writes" value="626718" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="419034" />
+      <stat name="rename_reads" value="420203" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218979" />
+      <stat name="rename_writes" value="219563" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26263" />
-      <stat name="fp_rename_writes" value="13724" />
+      <stat name="fp_rename_reads" value="26173" />
+      <stat name="fp_rename_writes" value="13675" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="847358" />
-      <stat name="inst_window_writes" value="388734" />
-      <stat name="inst_window_wakeup_accesses" value="251669" />
-      <stat name="fp_inst_window_reads" value="23962" />
-      <stat name="fp_inst_window_writes" value="23385" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10939" />
+      <stat name="inst_window_reads" value="854554" />
+      <stat name="inst_window_writes" value="390509" />
+      <stat name="inst_window_wakeup_accesses" value="252057" />
+      <stat name="fp_inst_window_reads" value="23893" />
+      <stat name="fp_inst_window_writes" value="23295" />
+      <stat name="fp_inst_window_wakeup_accesses" value="10885" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="328299" />
-      <stat name="float_regfile_reads" value="16399" />
-      <stat name="int_regfile_writes" value="195073" />
-      <stat name="float_regfile_writes" value="9011" />
+      <stat name="int_regfile_reads" value="328273" />
+      <stat name="float_regfile_reads" value="16305" />
+      <stat name="int_regfile_writes" value="195495" />
+      <stat name="float_regfile_writes" value="8938" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="858" />
       <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="261237" />
-      <stat name="fpu_accesses" value="12038" />
+      <stat name="ialu_accesses" value="261587" />
+      <stat name="fpu_accesses" value="11998" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -3058,15 +3058,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10448.0" />
-        <stat name="read_misses" value="510.0" />
+        <stat name="read_accesses" value="10467.0" />
+        <stat name="read_misses" value="505.5" />
         <stat name="conflicts" value="stats.system.cpu12.icache.replacements" />
       </component>
       <component id="system.core12.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38377" />
-        <stat name="total_misses" value="708" />
+        <stat name="total_accesses" value="38388" />
+        <stat name="total_misses" value="688" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core12.dcache" name="dcache">
@@ -3074,10 +3074,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20036.0" />
-        <stat name="write_accesses" value="20036.0" />
-        <stat name="read_misses" value="1102.0" />
-        <stat name="write_misses" value="1102.0" />
+        <stat name="read_accesses" value="20076.5" />
+        <stat name="write_accesses" value="20076.5" />
+        <stat name="read_misses" value="1090.0" />
+        <stat name="write_misses" value="1090.0" />
         <stat name="conflicts" value="stats.system.cpu12.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -3086,7 +3086,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36254" />
+        <stat name="read_accesses" value="36367" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="20587" />
       </component>
@@ -3183,57 +3183,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="270953" />
-      <stat name="int_instructions" value="205156" />
-      <stat name="fp_instructions" value="776" />
-      <stat name="branch_instructions" value="30583" />
-      <stat name="branch_mispredictions" value="2696" />
-      <stat name="load_instructions" value="37967" />
-      <stat name="store_instructions" value="16310" />
-      <stat name="committed_instructions" value="200716" />
-      <stat name="committed_int_instructions" value="312992" />
-      <stat name="committed_fp_instructions" value="6819" />
+      <stat name="total_instructions" value="885353" />
+      <stat name="int_instructions" value="549686" />
+      <stat name="fp_instructions" value="58609" />
+      <stat name="branch_instructions" value="48065" />
+      <stat name="branch_mispredictions" value="3583" />
+      <stat name="load_instructions" value="100893" />
+      <stat name="store_instructions" value="28584" />
+      <stat name="committed_instructions" value="783489" />
+      <stat name="committed_int_instructions" value="472084" />
+      <stat name="committed_fp_instructions" value="224575" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="461469" />
-      <stat name="idle_cycles" value="133583" />
-      <stat name="busy_cycles" value="327886" />
+      <stat name="total_cycles" value="638402" />
+      <stat name="idle_cycles" value="145505" />
+      <stat name="busy_cycles" value="492897" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="603503" />
-      <stat name="ROB_writes" value="623934" />
+      <stat name="ROB_reads" value="1337395" />
+      <stat name="ROB_writes" value="1879813" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="418738" />
+      <stat name="rename_reads" value="990353" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="218797" />
+      <stat name="rename_writes" value="544065" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="26190" />
-      <stat name="fp_rename_writes" value="13684" />
+      <stat name="fp_rename_reads" value="315837" />
+      <stat name="fp_rename_writes" value="173509" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="850851" />
-      <stat name="inst_window_writes" value="388012" />
-      <stat name="inst_window_wakeup_accesses" value="251319" />
-      <stat name="fp_inst_window_reads" value="24071" />
-      <stat name="fp_inst_window_writes" value="23311" />
-      <stat name="fp_inst_window_wakeup_accesses" value="10979" />
+      <stat name="inst_window_reads" value="1799314" />
+      <stat name="inst_window_writes" value="823831" />
+      <stat name="inst_window_wakeup_accesses" value="638686" />
+      <stat name="fp_inst_window_reads" value="471957" />
+      <stat name="fp_inst_window_writes" value="256791" />
+      <stat name="fp_inst_window_wakeup_accesses" value="233438" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="327849" />
-      <stat name="float_regfile_reads" value="16465" />
-      <stat name="int_regfile_writes" value="194864" />
-      <stat name="float_regfile_writes" value="9015" />
+      <stat name="int_regfile_reads" value="868092" />
+      <stat name="float_regfile_reads" value="298531" />
+      <stat name="int_regfile_writes" value="537524" />
+      <stat name="float_regfile_writes" value="219653" />
       <!-- accesses to the working reg -->
-      <stat name="function_calls" value="858" />
-      <stat name="context_switches" value="34" />
+      <stat name="function_calls" value="2580" />
+      <stat name="context_switches" value="43" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="260724" />
-      <stat name="fpu_accesses" value="12095" />
+      <stat name="ialu_accesses" value="649639" />
+      <stat name="fpu_accesses" value="236142" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -3292,15 +3292,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="10392.5" />
-        <stat name="read_misses" value="506.0" />
+        <stat name="read_accesses" value="30737.5" />
+        <stat name="read_misses" value="579.0" />
         <stat name="conflicts" value="stats.system.cpu13.icache.replacements" />
       </component>
       <component id="system.core13.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="38318" />
-        <stat name="total_misses" value="697" />
+        <stat name="total_accesses" value="147449" />
+        <stat name="total_misses" value="934" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core13.dcache" name="dcache">
@@ -3308,10 +3308,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="20080.0" />
-        <stat name="write_accesses" value="20080.0" />
-        <stat name="read_misses" value="1063.0" />
-        <stat name="write_misses" value="1063.0" />
+        <stat name="read_accesses" value="70044.0" />
+        <stat name="write_accesses" value="70044.0" />
+        <stat name="read_misses" value="1218.5" />
+        <stat name="write_misses" value="1218.5" />
         <stat name="conflicts" value="stats.system.cpu13.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -3320,9 +3320,9 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="36188" />
+        <stat name="read_accesses" value="61898" />
         <!--See IFU code for guideline -->
-        <stat name="write_accesses" value="20587" />
+        <stat name="write_accesses" value="41368" />
       </component>
     </component>
     
@@ -3417,57 +3417,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="887063" />
-      <stat name="int_instructions" value="550802" />
-      <stat name="fp_instructions" value="58605" />
-      <stat name="branch_instructions" value="48499" />
-      <stat name="branch_mispredictions" value="3590" />
-      <stat name="load_instructions" value="101234" />
-      <stat name="store_instructions" value="28736" />
+      <stat name="total_instructions" value="885792" />
+      <stat name="int_instructions" value="549894" />
+      <stat name="fp_instructions" value="58590" />
+      <stat name="branch_instructions" value="48250" />
+      <stat name="branch_mispredictions" value="3572" />
+      <stat name="load_instructions" value="100948" />
+      <stat name="store_instructions" value="28700" />
       <stat name="committed_instructions" value="783489" />
-      <stat name="committed_int_instructions" value="463263" />
+      <stat name="committed_int_instructions" value="474436" />
       <stat name="committed_fp_instructions" value="224575" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="641371" />
-      <stat name="idle_cycles" value="156745" />
-      <stat name="busy_cycles" value="484626" />
+      <stat name="total_cycles" value="641223" />
+      <stat name="idle_cycles" value="145804" />
+      <stat name="busy_cycles" value="495419" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="1331804" />
-      <stat name="ROB_writes" value="1887218" />
+      <stat name="ROB_reads" value="1340637" />
+      <stat name="ROB_writes" value="1881803" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="994067" />
+      <stat name="rename_reads" value="991554" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="545987" />
+      <stat name="rename_writes" value="544666" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="316184" />
-      <stat name="fp_rename_writes" value="173662" />
+      <stat name="fp_rename_reads" value="315988" />
+      <stat name="fp_rename_writes" value="173574" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="1794277" />
-      <stat name="inst_window_writes" value="829408" />
-      <stat name="inst_window_wakeup_accesses" value="640053" />
-      <stat name="fp_inst_window_reads" value="472163" />
-      <stat name="fp_inst_window_writes" value="257133" />
-      <stat name="fp_inst_window_wakeup_accesses" value="233515" />
+      <stat name="inst_window_reads" value="1802524" />
+      <stat name="inst_window_writes" value="825158" />
+      <stat name="inst_window_wakeup_accesses" value="638993" />
+      <stat name="fp_inst_window_reads" value="472100" />
+      <stat name="fp_inst_window_writes" value="256957" />
+      <stat name="fp_inst_window_wakeup_accesses" value="233483" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="869214" />
-      <stat name="float_regfile_reads" value="298685" />
-      <stat name="int_regfile_writes" value="538480" />
-      <stat name="float_regfile_writes" value="219708" />
+      <stat name="int_regfile_reads" value="868244" />
+      <stat name="float_regfile_reads" value="298658" />
+      <stat name="int_regfile_writes" value="537670" />
+      <stat name="float_regfile_writes" value="219688" />
       <!-- accesses to the working reg -->
       <stat name="function_calls" value="2580" />
       <stat name="context_switches" value="43" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="651237" />
-      <stat name="fpu_accesses" value="236256" />
+      <stat name="ialu_accesses" value="649931" />
+      <stat name="fpu_accesses" value="236223" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -3526,15 +3526,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="30906.0" />
-        <stat name="read_misses" value="578.5" />
+        <stat name="read_accesses" value="30794.5" />
+        <stat name="read_misses" value="580.0" />
         <stat name="conflicts" value="stats.system.cpu14.icache.replacements" />
       </component>
       <component id="system.core14.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="147655" />
-        <stat name="total_misses" value="977" />
+        <stat name="total_accesses" value="147430" />
+        <stat name="total_misses" value="926" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core14.dcache" name="dcache">
@@ -3542,10 +3542,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="69867.5" />
-        <stat name="write_accesses" value="69867.5" />
-        <stat name="read_misses" value="1271.0" />
-        <stat name="write_misses" value="1271.0" />
+        <stat name="read_accesses" value="70021.5" />
+        <stat name="write_accesses" value="70021.5" />
+        <stat name="read_misses" value="1255.0" />
+        <stat name="write_misses" value="1255.0" />
         <stat name="conflicts" value="stats.system.cpu14.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -3554,7 +3554,7 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="62407" />
+        <stat name="read_accesses" value="62113" />
         <!--See IFU code for guideline -->
         <stat name="write_accesses" value="41368" />
       </component>
@@ -3651,57 +3651,57 @@
       <param name="RAS_size" value="16" />
       <!-- general stats, defines simulation periods;require total, idle, and busy cycles for sanity check  -->
       <!-- please note: if target architecture is X86, then all the instructions refer to (fused) micro-ops -->
-      <stat name="total_instructions" value="7179843" />
-      <stat name="int_instructions" value="3351690" />
-      <stat name="fp_instructions" value="803073" />
-      <stat name="branch_instructions" value="247403" />
-      <stat name="branch_mispredictions" value="6376" />
-      <stat name="load_instructions" value="656651" />
-      <stat name="store_instructions" value="314847" />
-      <stat name="committed_instructions" value="6932207" />
-      <stat name="committed_int_instructions" value="2470216" />
-      <stat name="committed_fp_instructions" value="3102786" />
+      <stat name="total_instructions" value="295942" />
+      <stat name="int_instructions" value="214248" />
+      <stat name="fp_instructions" value="5879" />
+      <stat name="branch_instructions" value="28411" />
+      <stat name="branch_mispredictions" value="2440" />
+      <stat name="load_instructions" value="44124" />
+      <stat name="store_instructions" value="15750" />
+      <stat name="committed_instructions" value="232313" />
+      <stat name="committed_int_instructions" value="314715" />
+      <stat name="committed_fp_instructions" value="18574" />
       <stat name="pipeline_duty_cycle" value="1" />
       <!--<=1, runtime_ipc/peak_ipc; averaged for all cores if homogeneous -->
       <!-- the following cycle stats are used for heterogeneous cores only, 
         please ignore them if homogeneous cores -->
-      <stat name="total_cycles" value="2685922" />
-      <stat name="idle_cycles" value="164620" />
-      <stat name="busy_cycles" value="2521302" />
+      <stat name="total_cycles" value="468944" />
+      <stat name="idle_cycles" value="140970" />
+      <stat name="busy_cycles" value="327974" />
       <!-- instruction buffer stats -->
       <!-- ROB stats, both RS and Phy based OoOs have ROB
       performance simulator should capture the difference on accesses,
       otherwise, McPAT has to guess based on number of committed instructions. -->
-      <stat name="ROB_reads" value="9197713" />
-      <stat name="ROB_writes" value="14659501" />
+      <stat name="ROB_reads" value="621386" />
+      <stat name="ROB_writes" value="661286" />
       <!-- RAT accesses -->
-      <stat name="rename_reads" value="6113203" />
+      <stat name="rename_reads" value="429525" />
       <!--lookup in renaming logic -->
-      <stat name="rename_writes" value="3198149" />
+      <stat name="rename_writes" value="230151" />
       <!--update dest regs. renaming logic -->
-      <stat name="fp_rename_reads" value="3856620" />
-      <stat name="fp_rename_writes" value="2017608" />
+      <stat name="fp_rename_reads" value="29516" />
+      <stat name="fp_rename_writes" value="15815" />
       <!-- decode and rename stage use this, should be total ic - nop -->
       <!-- Inst window stats -->
-      <stat name="inst_window_reads" value="10571459" />
-      <stat name="inst_window_writes" value="4454460" />
-      <stat name="inst_window_wakeup_accesses" value="3962402" />
-      <stat name="fp_inst_window_reads" value="6357384" />
-      <stat name="fp_inst_window_writes" value="3226554" />
-      <stat name="fp_inst_window_wakeup_accesses" value="3135599" />
+      <stat name="inst_window_reads" value="880568" />
+      <stat name="inst_window_writes" value="388601" />
+      <stat name="inst_window_wakeup_accesses" value="266301" />
+      <stat name="fp_inst_window_reads" value="44341" />
+      <stat name="fp_inst_window_writes" value="29800" />
+      <stat name="fp_inst_window_wakeup_accesses" value="21393" />
       <!--  RF accesses -->
-      <stat name="int_regfile_reads" value="5790134" />
-      <stat name="float_regfile_reads" value="3783243" />
-      <stat name="int_regfile_writes" value="3174977" />
-      <stat name="float_regfile_writes" value="2880863" />
+      <stat name="int_regfile_reads" value="351006" />
+      <stat name="float_regfile_reads" value="23097" />
+      <stat name="int_regfile_writes" value="211498" />
+      <stat name="float_regfile_writes" value="18575" />
       <!-- accesses to the working reg -->
-      <stat name="function_calls" value="25640" />
-      <stat name="context_switches" value="43" />
+      <stat name="function_calls" value="751" />
+      <stat name="context_switches" value="34" />
       <!-- Number of Windows switches (number of function calls and returns)-->
       <!-- Alu stats by default, the processor has one FPU that includes the divider and 
        multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-      <stat name="ialu_accesses" value="3989577" />
-      <stat name="fpu_accesses" value="3186490" />
+      <stat name="ialu_accesses" value="276073" />
+      <stat name="fpu_accesses" value="22216" />
       <stat name="mul_accesses" value="0" />
       <stat name="cdb_alu_accesses" value="0" />
       <stat name="cdb_mul_accesses" value="0" />
@@ -3760,15 +3760,15 @@
         <!-- cache_policy;//0 no write or write-though with non-write allocate;1 write-back with write-allocate -->
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="242058.0" />
-        <stat name="read_misses" value="585.0" />
+        <stat name="read_accesses" value="11033.5" />
+        <stat name="read_misses" value="508.0" />
         <stat name="conflicts" value="stats.system.cpu15.icache.replacements" />
       </component>
       <component id="system.core15.dtlb" name="dtlb">
         <param name="number_entries" value="64" />
         <!--dual threads-->
-        <stat name="total_accesses" value="1351832" />
-        <stat name="total_misses" value="967" />
+        <stat name="total_accesses" value="46163" />
+        <stat name="total_misses" value="620" />
         <stat name="conflicts" value="0" />
       </component>
       <component id="system.core15.dcache" name="dcache">
@@ -3776,10 +3776,10 @@
         <param name="dcache_config" value="32768,64,2,1,1,2,64,0" />
         <param name="buffer_sizes" value="4,4,4,4" />
         <!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-        <stat name="read_accesses" value="649576.0" />
-        <stat name="write_accesses" value="649576.0" />
-        <stat name="read_misses" value="1677.5" />
-        <stat name="write_misses" value="1677.5" />
+        <stat name="read_accesses" value="21090.0" />
+        <stat name="write_accesses" value="21090.0" />
+        <stat name="read_misses" value="1029.0" />
+        <stat name="write_misses" value="1029.0" />
         <stat name="conflicts" value="stats.system.cpu15.dcache.replacements" />
       </component>
       <param name="number_of_BTB" value="2" />
@@ -3788,9 +3788,9 @@
         <param name="BTB_config" value="5120,4,2,1, 1,3" />
         <!--should be 4096 + 1024 -->
         <!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
-        <stat name="read_accesses" value="358271" />
+        <stat name="read_accesses" value="33599" />
         <!--See IFU code for guideline -->
-        <stat name="write_accesses" value="323984" />
+        <stat name="write_accesses" value="19629" />
       </component>
     </component>
     
@@ -3808,11 +3808,11 @@
       <param name="ports" value="1,1,1" />
       <!-- number of r, w, and rw ports -->
       <param name="device_type" value="0" />
-      <stat name="read_accesses" value="29347.0" />
-      <stat name="write_accesses" value="29347.0" />
-      <stat name="read_misses" value="24810.5" />
-      <stat name="write_misses" value="24810.5" />
-      <stat name="conflicts" value="1038" /> 
+      <stat name="read_accesses" value="28744.0" />
+      <stat name="write_accesses" value="28744.0" />
+      <stat name="read_misses" value="24452.5" />
+      <stat name="write_misses" value="24452.5" />
+      <stat name="conflicts" value="1041" /> 
       <stat name="duty_cycle" value="0.5" />
     </component>
 
@@ -3902,10 +3902,10 @@
       <param name="databus_width" value="128" />
       <param name="addressbus_width" value="51" />
       <!-- McPAT will add the control bus width to the address bus width automatically -->
-      <stat name="memory_accesses" value="52939" />
+      <stat name="memory_accesses" value="52170" />
                                         
-      <stat name="memory_reads" value="52757" />
-      <stat name="memory_writes" value="182" />
+      <stat name="memory_reads" value="51997" />
+      <stat name="memory_writes" value="173" />
       <!-- McPAT does not track individual mc, instead, it takes the total accesses and calculate 
       the average power per MC or per channel. This is sufficient for most application. 
       Further track down can be easily added in later versions. -->
